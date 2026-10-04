@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu Ngang Dropdown</title>
+    <style>
+        /* Thiết lập phông chữ cơ bản */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        /* Định dạng phân vùng thanh menu */
+        #menu {
+            height: 40px;
+            background-color: #333;
+        }
+
+        #menu ul {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        /* Xếp các mục menu chính theo hàng ngang */
+        #menu > ul > li {
+            float: left;
+            position: relative; /* Làm mốc định vị cho menu con */
+        }
+
+        /* Định dạng cho các thẻ liên kết trong trình đơn */
+        #menu a {
+            display: block;
+            width: 140px;
+            height: 40px;
+            line-height: 40px;
+            text-align: center;
+            color: #ffffff;
+            text-decoration: none;
+            background-color: #333;
+        }
+
+        /* Đổi màu nền sang đỏ khi đưa con trỏ chuột qua */
+        #menu li:hover > a {
+            background-color: #e60000;
+        }
+
+        /* Định dạng menu con (Dropdown) */
+        #menu ul ul {
+            position: absolute;
+            top: 40px;            /* Nằm ngay bên dưới menu cha */
+            left: 0;
+            visibility: hidden;   /* Ẩn mặc định */
+            z-index: 1000;
+        }
+
+        /* Xếp các mục menu con theo chiều dọc */
+        #menu ul ul li {
+            float: none;
+        }
+
+        /* Hiển thị menu con tương ứng khi di chuột vào mục menu cha */
+        #menu li:hover > ul {
+            visibility: visible;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="menu">
+        <ul>
+            <li><a href="#home">Trang chủ</a></li>
+            <li>
+                <a href="#about">Giới thiệu</a>
+                <ul>
+                    <li><a href="#history">Lịch sử</a></li>
+                    <li><a href="#team">Đội ngũ</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#services">Dịch vụ</a>
+                <ul>
+                    <li><a href="#web">Thiết kế Web</a></li>
+                    <li><a href="#seo">Dịch vụ SEO</a></li>
+                    <li><a href="#marketing">Marketing</a></li>
+                </ul>
+            </li>
+            <li><a href="#contact">Liên hệ</a></li>
+        </ul>
+    </div>
+
+</body>
+</html>
